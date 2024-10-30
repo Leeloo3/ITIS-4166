@@ -1,0 +1,71 @@
+Project 3 Grading
+If you are on campus, make sure that you are connected to eduroam. Atlas rejects connection
+requests from niner guest wifi. Unzip and open in VS code. Install third party packages and start
+the app in the terminal.
+Rubric 1 (2pts). The app uses MongoDB Atlas for data storage.
+If a submission connects to a local database, give 0 for this rubric and email the student to ask
+them to send their Atlas link. If no Atlas link is received or the database is not populated as
+required, the student will receive 0 for Rubric 3 and Rubric 4.
+Rubric 2 (12pts). Schema
+● Item schema contains at least following properties: (1) title, (2) seller, (3) condition, (4)
+price, (5) details, (6) images, (7) active (4pts)
+○ Deduct 0.5pt for each missing property
+● All properties use validators as expected (8pts)
+Rubric 3 (15pts). Show all items
+● Clicking “browse” in the nav bar renders the items view (2pts)
+● The page displays all items in the database (6pts)
+○ There should be at least 6 items. deduct 1pt for each missing item
+● Compare each item with what is stored in the database, each item presents all required
+information and the information is consistent as stored in the database: image, title,
+condition and price (4pts)
+● The items are sorted by price in the ascending order (3pts)
+Rubric 4 (8pts). Search for items
+● Enter a search term in the search bar and search, the app displays items whose title
+and/or details include the search term (6pts). [no point if the result is not accurate]
+○ Deduct 2pts if the search is case-sensitive
+○ Deduct 2pts if it is not a keyword searching
+● If no matching item exists, the page displays a message stating no item can be found
+(2pts)
+Rubric 5 (17pts). Create a new item
+● Click “sell” in the nav bar, the app renders the new item page (2pts)
+● The form allows you to choose a condition (1pt) and to upload an image (1pt)
+● Create an item with a price that is in the middle of the price ranking (not the lowest or the
+highest), and click create. The app redirects to items view (2pts)
+● In the items view,
+○ the new item is rendered in the page (2pts)
+○ the new item has consistent information as submitted in the form: image (3pts),
+title (1pt), condition (1pt), price (1pt)
+○ all items are sorted by price in ascending order (3pts)
+Rubric 6 (8pts). Show item details
+● Click an existing item, the app renders the item details view (2pts)
+● All required item information is present and is consistent as stored in database (6pts)
+○ image, title, condition, price, seller, details (1pt each)
+Rubric 7 (15pts). Edit an item [no point if edit button is not present or is not working]
+● Click the edit button of an existing item, the app renders the edit form (2pts)
+● The form allows you to choose a condition (1pt)
+● the form is pre-filled with correct information for the following fields: condition, price, title,
+details (4pts)
+○ deduct 1pt for each field that is not correctly filled
+● Change all of the fields, and click submit
+○ the app redirects to the item detail page (2pts)
+○ the changes took effect for
+■ image (2pts)
+■ condition, price, title, details (1pt each, 4pts in total)
+Rubric 8 (5pts). Delete an item [no point if delete button is not present or is not working]
+● Click the delete button of an item, the app renders the items page (2pt).
+● The item is not displayed on the page (3pts)
+Rubric 9 (18pts). Error handling
+● In case of unmatched id for querying, updating and deleting, display a 404 error. Here, id
+is a valid ObjectId but it does not match any document in the database (8pts, 2pts each)
+○ get /items/id
+○ get /items/id/edit
+○ put /items/id (use postman)
+○ delete /items/id (use postman)
+● In case of invalid route parameter, i.e., the route parameter is not a valid ObjectId (such
+as 100), display a 400 error (8pts, 2pts each)
+○ get /items/100
+○ get /items/100/edit
+○ put /items/100 (use postman)
+○ delete /items/100 (use postman)
+● In case of mongoose validation fails, display a 400 error and validation errors (2pts)
+○ post /items (use postman to send the request without any data)

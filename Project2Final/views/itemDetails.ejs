@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title><%= item.title %> Details</title>
+</head>
+<body>
+    <%- include('partials/header') %>
+    <main>
+        <div class="item-details">
+            <h2><%= item.title %></h2>
+            <img src="<%= item.image %>" alt="<%= item.title %>">
+            <p>Condition: <%= item.condition %></p>
+            <p>Seller: <%= item.seller %></p>
+            <p>Price: $<%= Number(item.price).toFixed(2) %></p>
+            <p>Details: <%= item.details %></p>
+            <div class="action-buttons">
+                <form action="/items/<%= item._id %>/edit" method="GET">
+                    <button type="submit">Edit Item</button>
+                </form>
+                <form action="/items/<%= item._id %>/delete" method="POST">
+                    <button type="submit" class="delete-btn">Delete Item</button>
+                </form>
+            </div>
+        </div>
+    </main>
+    <%- include('partials/footer') %>
+</body>
+</html>

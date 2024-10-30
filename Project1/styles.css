@@ -1,0 +1,89 @@
+header {
+    background-color: #333; /* Solid dark background */
+    color: white;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+header a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    font-weight: bold;
+}
+
+header nav a:hover {
+    color: #ffcc00;
+}
+
+header img {
+    width: 120px;
+    margin-left: 20px;
+}
+
+header form {
+    margin-right: 20px;
+}
+
+header input[type="text"] {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+header button {
+    padding: 5px 10px;
+    background-color: #ffcc00;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+header button:hover {
+    background-color: #e6b800;
+}
+
+/* Prevent header from covering the main content */
+body {
+    margin-top: 80px; /* Adjust this based on header height */
+}
+
+
+-----------------------------------
+
+body {
+    background-image: url('./images/370z.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh; /* Adjusts the height to full screen */
+    margin: 0;
+}
+
+footer {
+    background-color: #333; /* Solid dark background */
+    color: white;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    z-index: 1000;
+}
+
+footer {
+    grid-row: 3;
+    grid-column: 1/4;
+    height: 3rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }

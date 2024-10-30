@@ -1,0 +1,18 @@
+<%- include('../partials/header.ejs') %>
+    <div class="content">
+        <%if(stories.length) { %>
+            <p>Select a story to read</p>
+            <%stories.forEach(story=>) { %>
+                <li>
+                    <h3><%= story.title %></h3>
+                    <small>Posted on <%= story.createdAt %> by <%= story.author %></small>
+                    <p><%= story.content %></p>
+                    <form>
+                        <button type="submit" formmethod="GET" formaction="/stories/<%= story.id %>/edit">Edit</button>
+                    </form>
+                </li>
+            <% }) %>
+        </ul>
+    </div>
+
+    <%- include('../partials/footer.ejs') %>

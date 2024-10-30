@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Create New Item</title>
+</head>
+<body>
+    <%- include('partials/header') %>
+    <main>
+        <h2>Sell a New Item</h2>
+        <form action="/items" method="POST" enctype="multipart/form-data">
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title" required>
+
+            <label for="seller">Seller:</label>
+            <input type="text" id="seller" name="seller" required>
+
+            <label for="condition">Condition:</label>
+            <select id="condition" name="condition">
+                <option value="New">New</option>
+                <option value="Used">Used</option>
+            </select>
+
+            <label for="price">Price:</label>
+            <input type="number" id="price" name="price" step="0.01" required>
+
+            <label for="details">Details:</label>
+            <textarea id="details" name="details" required></textarea>
+
+            <label for="image">Upload Image:</label>
+            <input type="file" id="image" name="image" accept="image/*" required>
+
+            <button type="submit">Create Item</button>
+        </form>
+    </main>
+    <%- include('partials/footer') %>
+</body>
+</html>

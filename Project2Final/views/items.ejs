@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Items</title>
+</head>
+<body>
+    <%- include('partials/header') %>
+    <main>
+        <h2>Items for Sale</h2>
+        <form action="/items" method="GET" class="search-form">
+            <input type="text" name="search" placeholder="Search items...">
+            <button type="submit">Search</button>
+        </form>
+        <ul class="item-grid">
+            <% items.forEach(item => { %>
+                <li class="item-card">
+                    <a href="/items/<%= item._id %>">
+                        <img src="<%= item.image %>" alt="<%= item.title %>">
+                        <div class="item-info">
+                            <h3><%= item.title %></h3>
+                            <p>Price: $<%= Number(item.price).toFixed(2) %></p>
+                            <p>Condition: <%= item.condition %></p>
+                        </div>
+                    </a>
+                </li>
+            <% }); %>
+        </ul>
+    </main>
+    <%- include('partials/footer') %>
+</body>
+</html>
+```

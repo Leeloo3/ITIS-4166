@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sell Your Car - Stance Selection</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <a href="index.html">
+            <img src="./images/stanceLogo.webp" alt="Stance Selection Logo">
+        </a>
+        <form action="#" method="get">
+            <input type="text" placeholder="Search...">
+            <button type="submit">Search</button>
+        </form>
+        <nav>
+            <a href="items.html">Browse</a>
+            <a href="new.html">Sell</a>
+            <a href="#">Login</a>
+            <a href="#">Sign Up</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="item-container">
+            <h1>List Your Car</h1>
+            <form id="sell-form" method="POST" action="/submit_car">
+                <label for="car-name">Car Name:</label>
+                <input type="text" id="car-name" name="car-name" required>
+
+                <label for="car-condition">Condition:</label>
+                <select id="car-condition" name="car-condition" required>
+                    <option value="modified">Modified</option>
+                    <option value="show">Show Car</option>
+                    <option value="custom">Custom</option>
+                </select>
+
+                <label for="car-price">Price:</label>
+                <input type="number" id="car-price" name="car-price" required>
+
+                <label for="car-description">Description:</label>
+                <textarea id="car-description" name="car-description" required></textarea>
+
+                <button type="submit">Submit Car</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Stance Selection. All rights reserved.</p>
+        <div class="social-icons">
+            <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+                <i class="fab fa-facebook-square"></i>
+            </a>
+            <a href="https://twitter.com" target="_blank" aria-label="Twitter">
+                <i class="fab fa-twitter-square"></i>
+            </a>
+        </div>
+    </footer>
+</body>
+</html>
