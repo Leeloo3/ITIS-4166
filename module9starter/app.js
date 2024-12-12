@@ -18,7 +18,7 @@ let host = 'localhost';
 app.set('view engine', 'ejs');
 
 //connect to database
-mongoose.connect('mongodb://127.0.0.1:27017/Exercise9')
+mongoose.connect('mongodb://localhost:27017/Exercise9')
 .then(()=>{
     //start app
     app.listen(port, host, ()=>{
